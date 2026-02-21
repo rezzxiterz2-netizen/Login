@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Sederhana</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .box {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="loginPage" class="box">
+    <h2>LOGIN</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Masuk</button>
+    <p id="error" style="color:red;"></p>
+</div>
+
+<div id="successPage" class="box" style="display:none;">
+    <h2>LOGIN SUKSES</h2>
+</div>
+
+<script>
+function login() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    if (user === "123" && pass === "123") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("successPage").style.display = "block";
+    } else {
+        document.getElementById("error").innerText = "Username atau Password salah!";
+    }
+}
+</script>
+
+</body>
+</html>
